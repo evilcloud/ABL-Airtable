@@ -1,8 +1,6 @@
 import subprocess
 import re
 import socket
-import time
-import os
 
 
 def get_hashrates():
@@ -24,11 +22,16 @@ def get_hashrates():
 
 
 def convert_to_mh(value, unit):
-    value = float(value)
+    try:
+        value = float(value)
+    except ValueError:
+        value = 0
     if unit.lower() == "k":
         value /= 1000
     elif unit.lower() == "h":
         value /= 1_000_000
+    else:
+        value = 0
     return value
 
 
