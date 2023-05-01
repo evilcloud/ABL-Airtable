@@ -1,6 +1,6 @@
 import json
 from dotenv import load_dotenv
-from nvidia_handler import get_gpu_data
+from nvidia_handler import get_gpu_info
 from system_handler import get_system_data
 from data_processor import process_gpu_data, process_system_data
 from airtable_handler import get_airtable_instance, update_or_create_airtable_row
